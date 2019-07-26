@@ -104,16 +104,12 @@ class App extends React.Component {
         count++;
       }
     }
-    console.log(this.state.currentPlayer);
-      if (count != 6) {
-        console.log("ai played");
-        console.log(aiRow);
-        this.play(aiRow);
-        //this.setState({ board, currentPlayer: this.togglePlayer() });
-      } else {
-        console.log("retry");
-        this.ai(board);
-      }
+
+    if (count !== 6) {
+      board[5 - count][aiRow] = this.state.player2;
+      this.setState({ board, currentPlayer: this.state.player2 });
+      console.log(this.state);
+    }else this.ai(board);
   }
 
   checkVertical(board) {

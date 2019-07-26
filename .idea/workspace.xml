@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e65139-7a3c-4ce0-8fba-9e3455ee64ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/attempt200.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="111" column="63" selection-start-line="111" selection-start-column="63" selection-end-line="111" selection-end-column="63" />
+            <state relative-caret-position="273">
+              <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -136,12 +128,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564157185407</updated>
-      <workItem from="1564157186923" duration="5775000" />
+      <workItem from="1564157186923" duration="6511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5775000" />
+    <option name="totallyTimeSpent" value="6511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1034" y="1" width="893" height="1047" extended-state="0" />
@@ -149,12 +141,12 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24912281" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24912281" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="GraphQL" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -188,8 +180,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="111" column="63" selection-start-line="111" selection-start-column="63" selection-end-line="111" selection-end-column="63" />
+        <state relative-caret-position="273">
+          <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
