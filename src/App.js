@@ -155,7 +155,8 @@ class App extends React.Component {
               if (board[r][c] === 1 && board[r - 1][c] === 1 && board[r - 2][c] === 1) {
                 //vertical
                 console.log("caught vertical");
-                if (board[r - 3][c] === null) {
+                console.log("r: " + r + " c: " + c);
+                if (board[r - 3][c] === null && (r-3) >= 0) {
                   board[r - 3][c] = this.state.player2;
                   return board;
                   count--;
@@ -169,18 +170,23 @@ class App extends React.Component {
                   1 === board[r - 2][c + 2]) {
                 //diagonal right
                 console.log("caught d right");
+                console.log("r: " + r + " c: " + c);
+                if(r - 3 >= 0){
                 if (board[r - 3][c + 3] === null && board[r-2][c+3] !== null) {
                   board[r - 3][c + 3] = this.state.player2;
                   return board;
                   count--;
                   break;
-                } else if (board[r + 1][c - 1] === null && board[r + 2][c-1] !== null) {
-                  board[r + 1][c - 1] = this.state.player2;
-                  return board;
-                  count--;
-                  break;
                 }
-              }
+                } else if(c !== 0) {
+                  if (board[r + 1][c - 1] === null && board[r + 2][c - 1] !== null) {
+                    board[r + 1][c - 1] = this.state.player2;
+                    return board;
+                    count--;
+                    break;
+                  }
+                }
+                }
             }
             if (board[r][c] !== null && board[r - 1][c + 1] !== null && board[r - 2][c + 2] !== null) {
               console.log("dleft");
@@ -188,16 +194,21 @@ class App extends React.Component {
                   1 === board[r - 2][c + 2]) {
                 //diagonal left
                 console.log("caught d left");
-                if (board[r - 3][c - 3] === null && board[r-2][c-3] !== null) {
-                  board[r - 3][c - 3] = this.state.player2;
-                  return board;
-                  count--;
-                  break;
-                } else if (board[r + 1][c + 1] === null && board[r+2][c+1] !== null) {
-                  board[r + 1][c + 1] = this.state.player2;
-                  return board;
-                  count--;
-                  break;
+                console.log("r: " + r + " c: " + c);
+                if(r -3 >= 0 && c-3 >= 0) {
+                  if (board[r - 3][c - 3] === null && board[r - 2][c - 3] !== null) {
+                    board[r - 3][c - 3] = this.state.player2;
+                    return board;
+                    count--;
+                    break;
+                  }
+                } else if(r + 2 <= 5 && c + 1 <= 6) {
+                  if (board[r + 1][c + 1] === null && board[r + 2][c + 1] !== null) {
+                    board[r + 1][c + 1] = this.state.player2;
+                    return board;
+                    count--;
+                    break;
+                  }
                 }
               }
           }
