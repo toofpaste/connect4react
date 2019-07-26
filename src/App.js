@@ -532,11 +532,13 @@ class App extends React.Component {
               if (r !== 5 && c < 4) {
                 if (board[r][c + 2] === null && board[r + 1][c + 2] !== null) {
                   board[r][c + 2] = this.state.player2;
+                  //console.log("1");
                   return board;
                   count--;
                   break;
                 } else if (board[r][c - 1] === null && board[r + 1][c - 1] !== null) {
                   board[r][c - 1] = this.state.player2;
+                  //console.log("2");
                   return board;
                   count--;
                   break;
@@ -544,11 +546,13 @@ class App extends React.Component {
               } else {
                 if (board[r][c + 2] === null) {
                   board[r][c + 2] = this.state.player2;
+                  //console.log("3");
                   return board;
                   count--;
                   break;
                 } else if (board[r][c - 1] === null) {
                   board[r][c - 1] = this.state.player2;
+                  //console.log("4");
                   return board;
                   count--;
                   break;
@@ -564,6 +568,7 @@ class App extends React.Component {
               // console.log("r: " + r + " c: " + c);
               if (board[r - 2][c] === null && (r - 2) >= 0) {
                 board[r - 2][c] = this.state.player2;
+                //console.log("5");
                 return board;
                 count--;
                 break;
@@ -579,6 +584,7 @@ class App extends React.Component {
               if (r - 2 >= 0) {
                 if (board[r - 2][c + 2] === null && board[r - 3][c + 2] !== null) {
                   board[r - 2][c + 2] = this.state.player2;
+                  //console.log("6");
                   return board;
                   count--;
                   break;
@@ -586,6 +592,7 @@ class App extends React.Component {
               } else if (c !== 0) {
                 if (board[r + 1][c - 1] === null && board[r + 2][c - 1] !== null) {
                   board[r + 1][c - 1] = this.state.player2;
+                  //console.log("7");
                   return board;
                   count--;
                   break;
@@ -601,6 +608,7 @@ class App extends React.Component {
               if (r - 2 >= 0 && c - 2 >= 0) {
                 if (board[r - 2][c - 2] === null && board[r - 1][c - 2] !== null) {
                   board[r - 2][c - 2] = this.state.player2;
+                  //console.log("8");
                   return board;
                   count--;
                   break;
@@ -608,6 +616,7 @@ class App extends React.Component {
               } else if (r + 2 <= 5 && c + 1 <= 6) {
                 if (board[r + 1][c + 1] === null && board[r + 2][c + 1] !== null) {
                   board[r + 1][c + 1] = this.state.player2;
+                  //console.log("9");
                   return board;
                   count--;
                   break;
@@ -635,31 +644,38 @@ class App extends React.Component {
     //console.log(board);
     //place random start
     if(!this.state.gameOver) {
-      let att = this.aiAttack(board);
-      let def = this.aiDefend(board);
-      let moreDef = [0,0];
-          //this.aiMoreDef(board);
-      let moreAtt = [0,0];
-          //this.aiMoreAtt(board);
-      //console.log(this.state);
-      if (att.length >= 3) {
-        attH++;
-        console.log("att: " + attH);
-        board = att;
-      } else if (def.length >= 3) {
-        defH++;
-        console.log("def: " + defH);
-        board = def;
-      } else if (moreAtt.length >= 3){
-        attl++;
-        console.log("attL: " + attl);
-        board = moreAtt;
-      }else if (moreDef.length >= 3) {
-        defl++;
-        console.log("defL: " + defl);
-        board = moreDef;
-      } else board = this.aiEasy(board);
-    }
+        let att = this.aiAttack(board);
+        let def = this.aiDefend(board);
+
+
+        //console.log(this.state);
+
+        if (att.length >= 3) {
+          attH++;
+          console.log("att: " + attH);
+          board = att;
+        } else if (def.length >= 3) {
+          defH++;
+          console.log("def: " + defH);
+          board = def;
+        } else {
+          let moreAtt = this.aiMoreAtt(board);
+          if (moreAtt.length >= 3){
+          attl++;
+          console.log("attL: " + attl);
+          board = moreAtt;
+        }else {
+            let moreDef = this.aiMoreDef(board);
+            if (moreDef.length >= 3) {
+          defl++;
+          console.log("defL: " + defl);
+          board = moreDef;
+        } else board = this.aiEasy(board);
+          }
+        }
+}
+
+
 
     //place random end
 
