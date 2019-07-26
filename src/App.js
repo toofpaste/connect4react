@@ -259,7 +259,7 @@ class App extends React.Component {
         console.log("smart move no return");
       } else {
         //board = this.aiEasy(board);
-        return 0;
+        return [0,0];
       }
     }
   }
@@ -405,12 +405,12 @@ class App extends React.Component {
         console.log("smart move no return");
       } else {
         //board = this.aiEasy(board);
-        return 0;
+        return [0,0];
       }
     }
   }
   aiMoreAtt(board){
-    console.log("attack light called");
+    //console.log("attack light called");
     if(!this.state.gameOver) {
       let count = 0;
       for (let r = 5; r > 0; r--) {
@@ -418,8 +418,8 @@ class App extends React.Component {
           if (board[r][c] !== null && board[r][c + 1] !== null) {
             if (board[r][c] === 2 && board[r][c + 1] === 2) {
               //horizontal
-               console.log("caught more 2 horizontal");
-               console.log("r: " + r + " c: " + c);
+              //  console.log("caught more 2 horizontal");
+              //  console.log("r: " + r + " c: " + c);
               if (r !== 5 && c < 4) {
                 if (board[r][c + 2] === null && board[r + 1][c + 2] !== null) {
                   board[r][c + 2] = this.state.player2;
@@ -451,8 +451,8 @@ class App extends React.Component {
             //console.log("vert");
             if (board[r][c] === 2 && board[r - 1][c] === 2) {
               //vertical
-               console.log("caught more vertical");
-               console.log("r: " + r + " c: " + c);
+              //  console.log("caught more vertical");
+              //  console.log("r: " + r + " c: " + c);
               if (board[r - 2][c] === null && (r - 2) >= 0) {
                 board[r - 2][c] = this.state.player2;
                 return board;
@@ -465,8 +465,8 @@ class App extends React.Component {
             //console.log("dright");
             if (1 === board[r][c] && 1 === board[r - 1][c + 1]) {
               //diagonal right
-               console.log("caught more d right");
-               console.log("r: " + r + " c: " + c);
+              //  console.log("caught more d right");
+              //  console.log("r: " + r + " c: " + c);
               if (r - 2 >= 0) {
                 if (board[r - 2][c + 2] === null && board[r - 3][c + 2] !== null) {
                   board[r - 2][c + 2] = this.state.player2;
@@ -487,8 +487,8 @@ class App extends React.Component {
           if (board[r][c] !== null && board[r - 1][c + 1] !== null) {
             if (1 === board[r][c] && 1 === board[r - 1][c + 1]) {
               //diagonal left
-               console.log("caught more d left");
-               console.log("r: " + r + " c: " + c);
+              //  console.log("caught more d left");
+              //  console.log("r: " + r + " c: " + c);
               if (r - 2 >= 0 && c - 2 >= 0) {
                 if (board[r - 2][c - 2] === null && board[r - 1][c - 2] !== null) {
                   board[r - 2][c - 2] = this.state.player2;
@@ -515,7 +515,7 @@ class App extends React.Component {
         console.log("smart move no return");
       } else {
         //board = this.aiEasy(board);
-        return 0;
+        return [0,0];
       }
     }
   }
@@ -622,7 +622,7 @@ class App extends React.Component {
         console.log("smart move no return");
       } else {
         //board = this.aiEasy(board);
-        return 0;
+        return [0,0];
       }
     }
   }
@@ -637,22 +637,24 @@ class App extends React.Component {
     if(!this.state.gameOver) {
       let att = this.aiAttack(board);
       let def = this.aiDefend(board);
-      let moreDef = this.aiMoreDef(board);
-      let moreAtt = 0;
+      let moreDef = [0,0];
+          //this.aiMoreDef(board);
+      let moreAtt = [0,0];
           //this.aiMoreAtt(board);
-      if (att.length >= 2) {
+      //console.log(this.state);
+      if (att.length >= 3) {
         attH++;
         console.log("att: " + attH);
         board = att;
-      } else if (def.length >= 2) {
+      } else if (def.length >= 3) {
         defH++;
         console.log("def: " + defH);
         board = def;
-      } else if (moreAtt.length >= 2){
+      } else if (moreAtt.length >= 3){
         attl++;
         console.log("attL: " + attl);
         board = moreAtt;
-      }else if (moreDef.length >= 2) {
+      }else if (moreDef.length >= 3) {
         defl++;
         console.log("defL: " + defl);
         board = moreDef;
