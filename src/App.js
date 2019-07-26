@@ -27,7 +27,9 @@ class App extends React.Component {
     let board = [];
     for (let r = 0; r < 6; r++) {
       let row = [];
-      for (let c = 0; c < 7; c++) { row.push(null) }
+      for (let c = 0; c < 7; c++) {
+        row.push(null)
+      }
       board.push(row);
       //console.log("3");//6: runs 6 times 1 for each row
     }
@@ -46,11 +48,13 @@ class App extends React.Component {
   }
 
   play(c) {
-    //console.log("6"); //1: each move. c is colloumn placed 0-6
+
+    console.log("6"); //1: each move. c is colloumn placed 0-6
     if (!this.state.gameOver) {
       // Place piece on board
       //console.log("7");
       let board = this.state.board;
+
       for (let r = 5; r >= 0; r--) {
         //console.log(board);
         //board is an array of 6 arrays each array has 7 elements
@@ -60,7 +64,7 @@ class App extends React.Component {
         //ex: bottom middle for red is
         //board[5] = array[null,null,null,1,null,null,null]
         if (!board[r][c]) {
-          board[r][c] = this.state.currentPlayer;
+          board[r][c] = this.state.player1;
           //console.log("8");
           break;
         }
@@ -73,44 +77,66 @@ class App extends React.Component {
       let result = this.checkAll(board);
       if (result === this.state.player1) {
         //console.log("10"); //for red wins
-        this.setState({ board, gameOver: true, message: 'Player 1 (red) wins!' });
+        this.setState({board, gameOver: true, message: 'Player 1 (red) wins!'});
       } else if (result === this.state.player2) {
         //console.log("11"); //for yellow wins
-        this.setState({ board, gameOver: true, message: 'Player 2 (yellow) wins!' });
+        this.setState({board, gameOver: true, message: 'Player 2 (yellow) wins!'});
       } else if (result === 'draw') {
         //console.log("12"); //for draw game
-        this.setState({ board, gameOver: true, message: 'Draw game.' });
+        this.setState({board, gameOver: true, message: 'Draw game.'});
       } else {
         //console.log("13"); //toggles to next player
-        this.setState({ board, currentPlayer: this.togglePlayer() });
-        console.log(this.state);
-        if(this.state.currentPlayer === this.state.player1) {
-          this.ai(board);
-        }
+        this.setState({board, currentPlayer: this.togglePlayer()});
+        this.ai(board);
       }
     } else {
       //console.log("14"); //only if click after game is over
-      this.setState({ message: 'Game over. Please start a new game.' });
+      this.setState({message: 'Game over. Please start a new game.'});
     }
     //console.log("end play");
   }
-  ai(board){
+
+  ai(board) {
     //console.log("ai");
     //console.log(board);
+    //place random start
     let count = 0;
     let aiRow = Math.floor(Math.random() * 6);
-    for(var r = 0; r < 6; r++){
-      if(board[r][aiRow]){
+    for (var r = 0; r < 6; r++) {
+      if (board[r][aiRow]) {
         count++;
       }
     }
-
     if (count !== 6) {
       board[5 - count][aiRow] = this.state.player2;
-      this.setState({ board, currentPlayer: this.state.player2 });
-      console.log(this.state);
-    }else this.ai(board);
-  }
+    } else this.ai(board);
+    //place random end
+
+
+    //check win below
+    if (!this.state.gameOver) {
+        let result = this.checkAll(board);
+        if (result === this.state.player1) {
+          //console.log("10"); //for red wins
+          this.setState({board, gameOver: true, message: 'Player 1 (red) wins!'});
+        } else if (result === this.state.player2) {
+          //console.log("11"); //for yellow wins
+          this.setState({board, gameOver: true, message: 'Player 2 (yellow) wins!'});
+        } else if (result === 'draw') {
+          //console.log("12"); //for draw game
+          this.setState({board, gameOver: true, message: 'Draw game.'});
+        } else {
+          //console.log("13"); //toggles to next player
+
+          this.setState({board, currentPlayer: this.togglePlayer()});
+        }
+      }
+    else
+      {
+        //console.log("14"); //only if click after game is over
+        this.setState({message: 'Game over. Please start a new game.'});
+      }
+    }
 
   checkVertical(board) {
     // Check only if row is 3 or greater
