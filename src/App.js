@@ -95,11 +95,7 @@ class App extends React.Component {
     }
     //console.log("end play");
   }
-
-  ai(board) {
-    //console.log("ai");
-    //console.log(board);
-    //place random start
+  aiEasy(board){
     let count = 0;
     let aiRow = Math.floor(Math.random() * 6);
     for (var r = 0; r < 6; r++) {
@@ -109,7 +105,59 @@ class App extends React.Component {
     }
     if (count !== 6) {
       board[5 - count][aiRow] = this.state.player2;
-    } else this.ai(board);
+      return board;
+    } else this.aiEasy(board);
+
+
+  }
+  aiMedium(board){
+      let count = 0;
+      for(let r = 0; r < 6; r++){
+        for(let c = 0; c < 7; c++){
+
+          if(board[r][c] === 1 && board[r][c + 1] === 1 && board[r][c + 2] === 1){
+            //vertical
+            if(!board[r][c+3]) {
+              board[r][c + 3] = this.state.player2;
+            }
+          } else if(board[r][c] === 1 && board[r + 1][c] === 1 && board[r +2][c] === 1){
+            //horizontal
+            if(!board[r+3][c]) {
+              board[r + 3][c] = this.state.player2;
+            }else if(!board[r-1][c]){
+              board[r -1][c] = this.state.player2;
+            }
+          } else if (1 === board[r][c] && 1 === board[r - 1][c + 1] &&
+              1 === board[r - 2][c + 2]){
+            //diagonal right
+            if(!board[r-3][c+3]){
+            board[r - 3][c + 3] = this.state.player2;
+          }else if(!board[r+1][c-1]){
+              board[r+1][c-1] = this.state.player2;
+          }
+          } else if(1 === board[r][c] && 1 === board[r - 1][c + 1] &&
+              1 === board[r - 2][c + 2]) {
+            //diagonal left
+            if(!board[r-3][c-3]) {
+              board[r - 3][c - 3] = this.state.player2;
+            }else if(!board[r+1][c+1]){
+              board[r+1][c+1] = this.state.player2;
+            }
+          }
+        }
+      }
+      return board;
+  }
+  aiHard(board){
+
+
+  }
+
+  ai(board) {
+    //console.log("ai");
+    //console.log(board);
+    //place random start
+    board = this.aiEasy(board);
     //place random end
 
 
