@@ -272,6 +272,37 @@ class App extends React.Component {
               }
             }
           }
+          if(board[r][c] !== null && board[r][c+1] === null && board[r][c+2] !== null && board[r][c+3] !== null && this.topCheck(board,c)){
+            if(c+3 <= 6){
+              if(board[r][c] === 1 && board[r][c+1] === null  && board[r][c+2] === 1 && board[r][c+3]=== 1 && this.topCheck(board,c)){
+                board[r][c+1] = this.state.player2;
+                return board;
+                break;
+              }
+            }
+          }
+          if(board[r][c] !== null && board[r][c+1] !== null && board[r][c-1] === null && board[r][c+2] === null && this.topCheck(board,c)){
+            if(c + 2 <= 6 && c-1 >= 0){
+              if(board[r][c] === 1 && board[r][c+1] === 1 && board[r][c+2] === null && board[r][c-1] === null && r === 5){
+                board[r][c+2] = this.state.player2;
+                return board;
+                break;
+              }else if(board[r][c] === 1 && board[r][c+1] === 1 && board[r][c+2] === null && board[r][c-1] === null && board[r+1][c+2] !== null && board[r+2][c-1] !== null){
+                board[r][c+2] = this.state.player2;
+                return board;
+                break;
+              }
+            }
+          }
+          if(board[r][c] !== null && board[r-1][c+1] !== null && board[r-2][c+2] === null && board[r-3][c+3] !== null && board[r-1][c+2] !== null && this.topCheck(board, c)){
+            if(r - 3 >= 0 && c + 3 <= 6){
+              if(board[r][c] === 1 && board[r-1][c+1] === 1 && board[r-2][c+2]=== null && board[r-3][c+3]=== 1){
+                board[r-2][c+2] = this.state.player2;
+                return board;
+                break;
+              }
+            }
+          }
         }
         count++;
       }
@@ -653,6 +684,19 @@ class App extends React.Component {
                   break;
                 }
               }
+            }
+          }
+          if(board[r][c] !== null && board[r][c+1] === null && board[r][c+2] !== null && this.topCheck(board, c)){
+            if(c + 2 <= 6){
+            if(board[r][c] === 1 && board[r][c+2] === 1 && r === 5){
+              board[r][c+1] = this.state.player2;
+              return board;
+              break;
+            }else if(board[r][c] === 1 && board[r][c+2] === 1 && board[r+1][c + 1] !== null){
+              board[r][c+1] = this.state.player2;
+              return board;
+              break;
+            }
             }
           }
         }
