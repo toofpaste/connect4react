@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="301" column="22" selection-start-line="301" selection-start-column="22" selection-end-line="301" selection-end-column="22" />
+            <state relative-caret-position="175">
+              <caret line="1334" selection-start-line="1334" selection-end-line="1355" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -51,6 +51,8 @@
     <findStrings>
       <find>console.log</find>
       <find>toggle</find>
+      <find>this.checkBelow(board, r, c);</find>
+      <find>console.log(&quot;1111111&quot;);</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -67,7 +69,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1034" />
-    <option name="y" value="1" />
     <option name="width" value="893" />
     <option name="height" value="1047" />
   </component>
@@ -129,15 +130,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564157185407</updated>
-      <workItem from="1564157186923" duration="25449000" />
+      <workItem from="1564157186923" duration="41168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25449000" />
+    <option name="totallyTimeSpent" value="41168000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1034" y="1" width="893" height="1047" extended-state="0" />
+    <frame x="1034" y="0" width="893" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
@@ -181,8 +182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="301" column="22" selection-start-line="301" selection-start-column="22" selection-end-line="301" selection-end-column="22" />
+        <state relative-caret-position="175">
+          <caret line="1334" selection-start-line="1334" selection-end-line="1355" selection-end-column="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
