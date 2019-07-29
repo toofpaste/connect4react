@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e65139-7a3c-4ce0-8fba-9e3455ee64ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tst.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,11 +20,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="1334" selection-start-line="1334" selection-end-line="1355" selection-end-column="7" />
+            <state relative-caret-position="226">
+              <caret line="1446" column="31" selection-start-line="1446" selection-start-column="31" selection-end-line="1446" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <element signature="n#!!block;n#aiMoreAtt#0;n#App#0" />
+                <element signature="n#!!block;n#aiMoreDef#0;n#App#0" />
+                <element signature="n#!!block;n#checkBelow#0;n#App#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tst.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="64" column="35" selection-end-line="89" />
             </state>
           </provider>
         </entry>
@@ -53,6 +67,7 @@
       <find>toggle</find>
       <find>this.checkBelow(board, r, c);</find>
       <find>console.log(&quot;1111111&quot;);</find>
+      <find>=== 1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,6 +78,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/tst.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
@@ -130,12 +146,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564157185407</updated>
-      <workItem from="1564157186923" duration="41168000" />
+      <workItem from="1564157186923" duration="45501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41168000" />
+    <option name="totallyTimeSpent" value="45501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1034" y="0" width="893" height="1047" extended-state="0" />
@@ -180,12 +196,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tst.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="35" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="1334" selection-start-line="1334" selection-end-line="1355" selection-end-column="7" />
+        <state relative-caret-position="226">
+          <caret line="1446" column="31" selection-start-line="1446" selection-start-column="31" selection-end-line="1446" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!block;n#aiMoreAtt#0;n#App#0" />
+            <element signature="n#!!block;n#aiMoreDef#0;n#App#0" />
+            <element signature="n#!!block;n#checkBelow#0;n#App#0" />
           </folding>
         </state>
       </provider>
